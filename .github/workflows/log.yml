@@ -32,7 +32,7 @@ jobs:
           git config --global user.name "RusdiEneri"
           git config --global user.email "nuruddinrusydiilham@gmail.com"
 
-          git add log.txt
+          git add -f log.txt
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
