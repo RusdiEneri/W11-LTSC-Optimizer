@@ -42,4 +42,5 @@ jobs:
           git commit -m "chore: update activity log"
 
           # Push branch lokal saat ini ke remote main
-          git push --force origin HEAD:main
+          git push --force origin HEAD:master
+        
