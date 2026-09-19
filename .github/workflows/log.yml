@@ -19,6 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
       - name: Update log.txt
@@ -26,7 +27,7 @@ jobs:
           TIME=$(TZ='Asia/Jakarta' date '+%Y-%m-%d %H:%M:%S WIB')
           echo "Last updated: $TIME" > log.txt
 
-      - name: Commit and Push
+      - name: Commit and Force Push
         run: |
           git config --global user.name "RusdiEneri"
           git config --global user.email "nuruddinrusydiilham@gmail.com"
@@ -39,4 +40,4 @@ jobs:
           fi
 
           git commit -m "chore: update activity log"
-          git push
+          git push --force origin main
